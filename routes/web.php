@@ -11,10 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',['as' =>'index','uses' => function () {
+    return view('index');
+}]);
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/about',['as' =>'bus.index','uses' => function () {
+    return view('store.bus.index');
+}]);
+
+Route::get('/evaluation',['as' =>'evn.index','uses' => function () {
+    return view('evaluation.evn.index');
+}]);
