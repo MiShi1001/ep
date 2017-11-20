@@ -15,6 +15,12 @@ class CreateEvaluationsTable extends Migration
     {
         Schema::create('evaluations', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('ev_id')->unique();
+            $table->unsignedInteger('store_id');
+            $table->unsignedInteger('mem_id');
+            $table->unsignedInteger('manager_id');
+            $table->text('comment',500);
+            $table->unsignedInteger('score');
             $table->timestamps();
         });
     }

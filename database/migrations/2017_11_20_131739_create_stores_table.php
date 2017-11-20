@@ -15,6 +15,15 @@ class CreateStoresTable extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('store_id')->unique();
+            $table->unsignedInteger('mem_id');
+            $table->unsignedInteger('manager_id');
+            $table->string('user_id',20);
+            $table->string('store',50);
+            $table->text('introduction',500);
+            $table->string('location',100);
+            $table->string('type',10);
+            $table->float('score_avg');
             $table->timestamps();
         });
     }
