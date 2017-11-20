@@ -17,6 +17,7 @@ class CreateStoresTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('store_id')->unique();
             $table->unsignedInteger('mem_id');
+            $table->unsignedInteger('firm_id');
             $table->unsignedInteger('manager_id');
             $table->string('user_id',20);
             $table->string('store',50);
